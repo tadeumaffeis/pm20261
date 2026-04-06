@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Counter extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { count: 0 };
+        }
+
+        render() {
+          return (
+            <div>
+              <p>Valor: {this.state.count}</p>
+              <button
+                onClick={() => this.setState({ count: this.state.count + 1 })}
+              >
+                Incrementar
+              </button>
+            </div>
+          );
+        }
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Counter />);
+    </script>
+  </body>
+</html>

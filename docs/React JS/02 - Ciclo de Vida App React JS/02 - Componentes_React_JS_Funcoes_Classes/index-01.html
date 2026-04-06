@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      const MyComponent = function() {
+        return React.createElement('span', null, 'I am so custom');
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+
+      root.render(
+        React.createElement(
+          'h1',
+          null,
+          React.createElement(MyComponent, null),
+          ' text'
+        )
+      );
+    </script>
+  </body>
+</html>
