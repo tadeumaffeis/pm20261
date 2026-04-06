@@ -1,15 +1,15 @@
 services:
   react:
-    image: node:24-alpine
-    container-name: pm20261-node-frontend
+    image: node:20-alpine
+    container_name: pm20261-node-frontend
+    working_dir: /app
     restart: always
     ports:
       - "5173:5173"
     volumes:
-      - .:/app
-      - /app/node_modules
-      - ./src:/app/src
-    command: npm run dev -- --host 0.0.0.0
+      - ./pm20261-frontend:/app
+      - /app/node_modules 
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     networks:
       - pm20261-network
 
@@ -23,7 +23,7 @@ services:
       MYSQL_USER: pm20261user
       MYSQL_PASSWORD: pm20261userpass
     ports:
-      - "3306:3306"
+      - "4406:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
