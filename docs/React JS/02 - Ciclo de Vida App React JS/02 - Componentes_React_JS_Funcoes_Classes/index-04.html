@@ -15,10 +15,10 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      function FunctionSampleComponent({ name }) {
+      function FunctionSampleComponent({ name, text }) {
         return (
           <h1>
-            <b><cite>{name}</cite></b>
+            <b>{name}</b>&nbsp;{text}<i></i>
           </h1>
         );
       }
@@ -27,7 +27,7 @@
 
       root.render(
         <div>
-          <FunctionSampleComponent name="Function Sample" /> text
+          <FunctionSampleComponent name="Property 01" text="Texto 01" /> text
         </div>,
       );
     </script>
