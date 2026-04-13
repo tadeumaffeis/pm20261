@@ -1,0 +1,17 @@
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.form-wrapper > * {
+  width: 100%;
+  box-sizing: border-box;
+}
